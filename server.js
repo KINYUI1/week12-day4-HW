@@ -17,7 +17,7 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/flights',async (req,res)=>{
-    const flights = await Flight.find({})
+    const flights = await Flight.find({}).sort('departs');
     res.render('flight',{
         flights:flights
     })
